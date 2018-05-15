@@ -1,8 +1,15 @@
-# coding=utf-8
+#!/usr/bin/python
+# -*- coding:utf8 -*-
+# 家里水卡数据算法
+# 数据保存在第8块,数据算法如下:
+# 1.a=dword长度取字节集(金额×100+10000)
+# 2.b=a逐byte取反
+# 3.结果等于a+b+a+'00FF00FF'
 
-def conver(numStr):
+
+def conver(numStr):     #十六进制byte长度取反运算
     strVerif = '';
-    tmpnum = int(numStr,16);
+    tmpnum = int(numStr, 16);
     tmpnum = ~tmpnum;
     tmpnum = tmpnum & 0xff;
     strVerif = hex(tmpnum);
