@@ -8,8 +8,9 @@
 
 import struct
 
+
 money = float(input("Please input the money(0-255):"));
-if money > 255.0:
+if money > 255.0 or money < 0.0:       #限定输入范围，超出读卡器不识别
     print("Out of range!");
     exit();
 money = money * 100;
